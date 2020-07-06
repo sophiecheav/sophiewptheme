@@ -20,9 +20,19 @@
 
 <body <?php body_class(); ?>>
   <header class="site-header">
+
+    <!-- inclut le logo personnalisé (si existe) -->
     <div class="site-branding">
-      <a href="index.html"><img src="./assets/images/logo-rock-band.png" alt="Logo du site"></a>
+      <?php if(has_custom_logo()) :
+        the_custom_logo();
+        else:
+      ?>
+      <a href="<?php bloginfo('url'); ?>">
+        <?php bloginfo('name'); ?>
+      </a>
+      <?php endif; ?>
     </div>
+    
     <nav class="navigation navigation-top desktop-navigation">
       <?php
         wp_nav_menu(
