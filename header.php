@@ -18,31 +18,62 @@
 
 </head>
 
-<body>
+<body <?php body_class(); ?>>
   <header class="site-header">
     <div class="site-branding">
       <a href="index.html"><img src="./assets/images/logo-rock-band.png" alt="Logo du site"></a>
     </div>
     <nav class="navigation navigation-top desktop-navigation">
-      <ul>
+      <?php
+        wp_nav_menu(
+          array(
+            'theme_location'  => 'primary',
+            'container' => false // évite que WP englobe le <ul> d'une balise <div>
+          )
+        );
+      ?>
+      <!-- <ul>
         <li><a href="front-page.html">Accueil</a></li>
         <li><a href="index.html" class="active">Blog</a></li>
         <li><a href="page.html">Page</a></li>
         <li><a href="single.html">Article</a></li>
-      </ul>
+      </ul> -->
     </nav>
+
     <nav class="navigation navigation-top mobile-navigation">
       <ul>
         <li class="mobile-menu"><i class="fa fa-bars fa-1x"></i>
-          <ul class="sub-navigation">
+          <?php
+            wp_nav_menu(
+              array(
+                'theme_location'  => 'primary',
+                'menu_class'      => 'sub-navigation',
+                'container'       => false
+              )
+            );
+          ?>
+          <!-- <ul class="sub-navigation">
             <li><a href="front-page.html">Accueil</a></li>
             <li><a href="index.html" class="active">Blog</a></li>
             <li><a href="page.html">Page</a></li>
-            <li><a href="single.html">Article</a></li>
+            <li><a href="single.html">Article</a></li> -->
           </ul>
         </li>
       </ul>
     </nav>
+
+<!-- Affichage du logo personnalisé si existant (sinon affichage du titre du site) -->
+    <div class="site-branding">
+      <?php if(has_custom_logo()) :
+         the_custom_logo();
+       else: ?>
+        <a href="<?php bloginfo('url'); ?>">
+          <?php bloginfo('name'); ?>
+        </a>
+      <?php endif; ?>
+    </div>
+
+    <!-- menu droite : search bar + picto panier + popup recherche : à dynamiser ? -->
     <nav class="navigation navigation-aside">
       <ul>
         <li class="search-toggle">
