@@ -83,6 +83,6 @@ function sophiewptheme_init_widgets() {
 
 add_action('widgets_init', 'sophiewptheme_init_widgets');
 
-// require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer.php';
 
 ?>

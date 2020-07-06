@@ -8,6 +8,7 @@
   <meta name="author" content="<?php bloginfo('author'); ?>">
 
   <title><?php bloginfo('name'); ?></title>
+
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
@@ -21,18 +22,6 @@
 <body <?php body_class(); ?>>
   <header class="site-header">
 
-    <!-- inclut le logo personnalisé (si existe) -->
-    <div class="site-branding">
-      <?php if(has_custom_logo()) :
-        the_custom_logo();
-        else:
-      ?>
-      <a href="<?php bloginfo('url'); ?>">
-        <?php bloginfo('name'); ?>
-      </a>
-      <?php endif; ?>
-    </div>
-    
     <nav class="navigation navigation-top desktop-navigation">
       <?php
         wp_nav_menu(
@@ -51,7 +40,7 @@
     </nav>
 
     <nav class="navigation navigation-top mobile-navigation">
-      <ul>
+      <ul class="sub-navigation">
         <li class="mobile-menu"><i class="fa fa-bars fa-1x"></i>
           <?php
             wp_nav_menu(
@@ -62,24 +51,19 @@
               )
             );
           ?>
-          <!-- <ul class="sub-navigation">
-            <li><a href="front-page.html">Accueil</a></li>
-            <li><a href="index.html" class="active">Blog</a></li>
-            <li><a href="page.html">Page</a></li>
-            <li><a href="single.html">Article</a></li> -->
-          </ul>
         </li>
       </ul>
     </nav>
 
-<!-- Affichage du logo personnalisé si existant (sinon affichage du titre du site) -->
+    <!-- inclut le logo personnalisé (si existe) -->
     <div class="site-branding">
       <?php if(has_custom_logo()) :
-         the_custom_logo();
-       else: ?>
-        <a href="<?php bloginfo('url'); ?>">
-          <?php bloginfo('name'); ?>
-        </a>
+        the_custom_logo();
+        else:
+      ?>
+      <a href="<?php bloginfo('url'); ?>">
+        <?php bloginfo('name'); ?>
+      </a>
       <?php endif; ?>
     </div>
 

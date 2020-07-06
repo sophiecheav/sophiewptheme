@@ -1,16 +1,18 @@
 <?php get_header(); ?>
 
+  <!-- modif image arrière-plan accueil -->
   <section class="page-header front-page-header" style="background-image: url('
       <?php echo get_theme_mod('fp_container_image'); ?>
       ');">
-      
-    <h1 class="page-title">Bientôt en concert</h1>
-    <a href="#">
-      <button type="button" class="call-to-action">
-        Réserver mon billet
-      </button>
-  </a>
+    <!-- modif titre page -->
+    <h1 class="page-title"><?php echo get_theme_mod('fp_texts_title'); ?></h1>
+    <!-- bouton résa billet -->
+    <a href="<?php echo get_theme_mod('fp_button_url') ?>">
+      <!-- texte bouton 'Réserver mon billet' -->
+      <button type="button" class="call-to-action"><?php echo get_theme_mod('fp_button_text') ?></button>
+    </a>
   </section>
+
   <main class="container front-content">
     <section class="custom-presentation">
       <img src="./assets/images/yannis-papanastasopoulos-unsplash.jpg" alt="">

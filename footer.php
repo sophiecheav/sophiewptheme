@@ -32,24 +32,32 @@
         endif;
       ?>
     </div>
-
   </section>
 
   <section class="footer-infos container">
+
     <div class="copyright">
-      <p>© 2020 Descodeuses. Tous droits réservés.</p>
+      <p>© <?php the_time('Y'); ?> <?php bloginfo('name'); ?>. Tous droits réservés.</p>
     </div>
+
+<!-- pas div class="navigation-secondary" ? Mélange ici social et secondary... Combien de zones menus ? -->
     <div class="social-medias">
       <nav class="navigation navigation-bottom">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="index.html" class="active">Blog</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+        <?php
+          wp_nav_menu(
+            array(
+              'theme_location'  => 'secondary'
+            )
+          );
+        ?>
       </nav>
     </div>
+
   </section>
+
 </footer>
+
+<?php wp_footer(); ?>
+
 </body>
 </html>
