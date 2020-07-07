@@ -22,6 +22,19 @@
 <body <?php body_class(); ?>>
   <header class="site-header">
 
+    <!-- inclut le logo personnalisé (si existe) -->
+    <div class="site-branding">
+      <?php if(has_custom_logo()) :
+        the_custom_logo();
+        else:
+      ?>
+      <a href="<?php bloginfo('url'); ?>">
+        <?php bloginfo('name'); ?>
+      </a>
+      <?php endif; ?>
+    </div>
+
+    <!-- Menu central principal -->
     <nav class="navigation navigation-top desktop-navigation">
       <?php
         wp_nav_menu(
@@ -31,14 +44,9 @@
           )
         );
       ?>
-      <!-- <ul>
-        <li><a href="front-page.html">Accueil</a></li>
-        <li><a href="index.html" class="active">Blog</a></li>
-        <li><a href="page.html">Page</a></li>
-        <li><a href="single.html">Article</a></li>
-      </ul> -->
     </nav>
 
+    <!-- Menu pour mobile -->
     <nav class="navigation navigation-top mobile-navigation">
       <ul class="sub-navigation">
         <li class="mobile-menu"><i class="fa fa-bars fa-1x"></i>
@@ -55,19 +63,7 @@
       </ul>
     </nav>
 
-    <!-- inclut le logo personnalisé (si existe) -->
-    <div class="site-branding">
-      <?php if(has_custom_logo()) :
-        the_custom_logo();
-        else:
-      ?>
-      <a href="<?php bloginfo('url'); ?>">
-        <?php bloginfo('name'); ?>
-      </a>
-      <?php endif; ?>
-    </div>
-
-    <!-- menu droite : search bar + picto panier + popup recherche : à dynamiser ? -->
+    <!-- menu droite : search bar + picto panier + popup recherche : à dynamiser -->
     <nav class="navigation navigation-aside">
       <ul>
         <li class="search-toggle">

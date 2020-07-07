@@ -27,7 +27,7 @@ function sophiewptheme_init_widgets() {
       'description' => '<p>Description de la zone de widgets</p>',
       'before_widget' => '<div class="widget-section">',
       'after_widget'  => '</div>',
-      'before_title'  => '<h4 class="widget-title">',
+      'before_title'  => '<h4 class="widget-title">Zone de widgets 1',
       'after_title' => '</h4>'
     )
   );
@@ -39,7 +39,7 @@ function sophiewptheme_init_widgets() {
       'description' => '<p>Description de la zone de widgets</p>',
       'before_widget' => '<div class="widget-section">',
       'after_widget'  => '</div>',
-      'before_title'  => '<h4 class="widget-title">',
+      'before_title'  => '<h4 class="widget-title">Zone de widgets 2',
       'after_title' => '</h4>'
     )
   );
@@ -51,7 +51,7 @@ function sophiewptheme_init_widgets() {
       'description' => '<p>Description de la zone de widgets</p>',
       'before_widget' => '<div class="widget-section">',
       'after_widget'  => '</div>',
-      'before_title'  => '<h4 class="widget-title">',
+      'before_title'  => '<h4 class="widget-title">Zone de widgets 3',
       'after_title' => '</h4>'
     )
   );
@@ -63,7 +63,7 @@ function sophiewptheme_init_widgets() {
       'description' => '<p>Description de la zone de widgets</p>',
       'before_widget' => '<div class="widget-section">',
       'after_widget'  => '</div>',
-      'before_title'  => '<h4 class="widget-title">',
+      'before_title'  => '<h4 class="widget-title">Zone de widgets 4',
       'after_title' => '</h4>'
     )
   );
@@ -72,10 +72,10 @@ function sophiewptheme_init_widgets() {
     array(
       'id'  => 'widgets-sidebar',
       'name'  => 'Zone de widgets de la barre latérale',
-      'description' => '<p>Description de la zone de widgets</p>',
+      'description' => 'Description de la zone de widgets',
       'before_widget' => '<div class="widget">',
       'after_widget'  => '</div>',
-      'before_title'  => '<h3 class="widget-title">',
+      'before_title'  => '<h3 class="widget-title">Zone de widgets latérale',
       'after_title' => '</h3>'
     )
   );
