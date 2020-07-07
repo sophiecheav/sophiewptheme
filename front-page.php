@@ -54,10 +54,10 @@
       </div>
     </section>
 
-    <section class="custom-section <?php echo get_theme_mod('custom_quote_background') ?>">
+    <section class="custom-section <?php echo get_theme_mod('custom_quote_background'); ?>">
       <blockquote class="star-quote">
-        <p class="quote-content"><?php echo get_theme_mod('custom_quote_text') ?></p>
-        <cite class="quote-footer"><?php echo get_theme_mod('custom_quote_source') ?></cite>
+        <p class="quote-content"><?php echo get_theme_mod('custom_quote_text'); ?></p>
+        <cite class="quote-footer"><?php echo get_theme_mod('custom_quote_source'); ?></cite>
       </blockquote>
     </section>
 

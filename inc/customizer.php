@@ -685,12 +685,13 @@ function sophiewptheme_customize_register($wp_customize) {
         )
       );
 
+      // section citation
       $wp_customize->add_section(
         'custom_quote',
         array(
           'title' => 'Citation',
           'description' => 'Réglages pour la citation de la page d\'accueil principale',
-          'panel' => 'front-page'
+          'panel' => 'front_page'
         )
       );
 
@@ -772,7 +773,7 @@ function sophiewptheme_customize_register($wp_customize) {
             'label' => 'Couleur',
             'description' => 'Couleur de fond du bloc de citation',
             'section' => 'custom_quote',
-            'setting' => 'custom_quote_background',
+            'setting' => 'custom_quote_background'
           )
         )
       );
