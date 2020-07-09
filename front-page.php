@@ -3,13 +3,13 @@
   <!-- modif image arrière-plan accueil -->
   <section class="page-header front-page-header
     <?php
-      if(get_theme_mod('fp_container_boxy')) :
+      if(get_theme_mod('banner_boxy')) :
         echo 'boxy-header';
       endif;
     ?>"
     style="background-image: url('<?php echo get_theme_mod('fp_container_image'); ?>');">
     <!-- modif titre page -->
-    <h1 class="page-title" style="font-size: <?php echo get_theme_mod('fp_texts_title_size'); ?>;"><?php echo get_theme_mod('fp_texts_title'); ?></h1>
+    <h1 class="page-title" style="font-size: <?php echo get_theme_mod('fp_texts_title_size'); ?>px;"><?php echo get_theme_mod('fp_texts_title'); ?></h1>
     <!-- bouton résa billet -->
     <a href="<?php echo get_theme_mod('fp_button_url') ?>">
       <!-- texte bouton 'Réserver mon billet' -->
@@ -21,7 +21,7 @@
     <section class="custom-presentation">
       <img src="<?php echo get_theme_mod('custom_container_image'); ?>" alt="">
       <div class="custom-presentation-infos">
-        <h2 class="custom-title" style="font-size: <?php echo get_theme_mod('custom_texts_title_size'); ?>;"><?php echo get_theme_mod('custom_texts_title'); ?></h2>
+        <h2 class="custom-title" style="font-size: <?php echo get_theme_mod('custom_texts_title_size'); ?>px;"><?php echo get_theme_mod('custom_texts_title'); ?></h2>
         <p class="custom-content"><?php echo get_theme_mod('custom_texts_description'); ?></p>
         <a href="<?php echo get_page_uri('custom_button_url'); ?>">
           <button type="button" class="call-to-action <?php echo get_theme_mod('custom_button_style'); ?>"><?php echo get_theme_mod('custom_button_text') ?></button>
@@ -54,7 +54,7 @@
       </div>
     </section>
 
-    <section class="custom-section <?php echo get_theme_mod('custom_quote_background'); ?>">
+    <section class="custom-section <?php echo get_theme_mod('custom_quote_style'); ?>" style="background-color: <?php echo get_theme_mod('custom_quote_background'); ?>;">
       <blockquote class="star-quote">
         <p class="quote-content"><?php echo get_theme_mod('custom_quote_text'); ?></p>
         <cite class="quote-footer"><?php echo get_theme_mod('custom_quote_source'); ?></cite>

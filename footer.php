@@ -1,4 +1,4 @@
-<footer class="site-footer">
+<footer class="site-footer" style="background-color: <?php echo get_theme_mod('footer_bg_color'); ?>;">
   <section class="widgets-sections container">
 
     <div class="widgets-section" id="widgets-section-1">

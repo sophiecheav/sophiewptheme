@@ -40,199 +40,13 @@ function sophiewptheme_customize_register($wp_customize) {
     )
   );
 
-  $wp_customize->add_section(
-    'fp_container',
-    array(
-      'title' => 'Conteneur',
-      'description' => 'Réglages du conteneur de la page d\'accueil principale',
-      'panel' => 'front_page'
-    )
-  );
-
-  $wp_customize->add_setting(
-    'fp_container_image',
-    array(
-      'default' => get_template_directory() . '/assets/images/alex-bracken-unsplash.jpg',
-      'type' => 'theme_mod'
-    )
-  );
-
-  $wp_customize->add_control(
-    new WP_Customize_Image_control(
-      $wp_customize,
-      'fp_container_image',
-      array(
-        'label' => 'Image de fond',
-        'description' => 'Image de fond du conteneur de la page d\'accueil',
-        'section' => 'fp_container',
-        'setting' => 'fp_container_image'
-      )
-    )
-  );
-
-  $wp_customize->add_setting(
-    'fp_container_boxy',
-    array(
-      'default' => false,
-      'type' => 'theme_mod'
-    )
-  );
-
-  $wp_customize->add_control(
-    'fp_container_boxy',
-    array(
-      'label' => 'Affichage avec effet boxy',
-      'description' => 'Style du conteneur de la page d\'accueil.',
-      'section' => 'fp_container',
-      'setting' => 'fp_container_boxy',
-      'type' => 'checkbox'
-    )
-  );
+// Section images de la page d'accueil principale
 
   $wp_customize->add_section(
-    'fp_texts',
+    'fp_images',
     array(
-      'title' => 'Textes et styles',
-      'description' => 'Réglages pour les textes de la page d\'accueil principale.',
-      'panel' => 'front_page'
-    )
-  );
-
-  $wp_customize->add_setting(
-    'fp_texts_title',
-    array(
-      'default' => 'Bientôt en concert',
-      'type' => 'theme_mod'
-    )
-  );
-
-  $wp_customize->add_control(
-    'fp_texts_title',
-    array(
-      'label' => 'Titre principal',
-      'description' => 'Texte du titre principal',
-      'section' => 'fp_texts',
-      'setting' => 'fp_texts_title',
-      'type' => 'text'
-    )
-  );
-
-  $wp_customize->add_setting(
-    'fp_texts_title_size',
-    array(
-      'default' => 90,
-      'type' => 'theme_mod'
-    )
-  );
-
-  $wp_customize->add_control(
-    'fp_texts_title_size',
-    array(
-      'label' => 'Taille du titre',
-      'description' => 'Taille du texte du titre principal',
-      'section' => 'fp_texts',
-      'setting' => 'fp_texts_title_size',
-      'type' => 'number'
-    )
-  );
-
-// pas forcément de texte d'accueil ici. À réinsérer plutôt après (suite 2e photo)
-  $wp_customize->add_setting(
-    'fp_texts_description',
-    array(
-      'default' => 'Un message d\'accueil personnalisé.',
-      'type' => 'theme_mod'
-    )
-  );
-// idem
-  $wp_customize->add_control(
-    'fp_texts_description',
-    array(
-      'label' => 'Description',
-      'description' => 'Texte d\'introduction',
-      'section' => 'fp_texts',
-      'setting' => 'fp_texts_description',
-      'type' => 'textarea'
-    )
-  );
-
-  $wp_customize->add_section(
-    'fp_button',
-    array(
-      'title' => 'Bouton',
-      'description' => 'Réglages pour le bouton de la page d\'accueil principale',
-      'panel' => 'front_page'
-    )
-  );
-
-  $wp_customize->add_setting(
-    'fp_button_text',
-    array(
-      'default' => 'Réserver mon billet',
-      'type' => 'theme_mod'
-    )
-  );
-
-  $wp_customize->add_control(
-    'fp_button_text',
-    array(
-      'label' => 'Bouton',
-      'description' => 'Texte du bouton',
-      'section' => 'fp_button',
-      'setting' => 'fp_button_text',
-      'type' => 'text'
-    )
-  );
-
-  $wp_customize->add_setting(
-    'fp_button_url',
-    array(
-      'default' => '',
-      'type' => 'theme_mod'
-    )
-  );
-
-  $wp_customize->add_control(
-    'fp_button_url',
-    array(
-      'label' => 'Lien',
-      'description' => 'Adresse URL du bouton',
-      'section' => 'fp_button',
-      'setting' => 'fp_button_url',
-      'type' => 'url'
-    )
-  );
-
-  $wp_customize->add_setting(
-    'fp_button_style',
-    array(
-      'default' => 'btn-style-1',
-      'type' =>'theme_mod'
-    )
-  );
-
-  $wp_customize->add_control(
-    'fp_button_style',
-    array(
-      'label' => 'Style',
-      'description' => 'Style du bouton',
-      'section' => 'fp_button',
-      'type' => 'radio',
-      'choices' => array(
-        'btn-style-1' => 'Style 1',
-        'btn-style-2' => 'Style 2',
-        'btn-style-3' => 'Style 3'
-      )
-    )
-  );
-
-// Partie 2 'Actus' :
-
-  $wp_customize->add_section(
-    'custom_image',
-    array(
-      'title' => 'Image partie actus',
-      'description' => 'Réglages du conteneur de la page d\'accueil principale',
+      'title' => 'Images',
+      'description' => 'Réglages pour les images de la page d\'accueil principale.',
       'panel' => 'front_page'
     )
   );
@@ -252,156 +66,9 @@ function sophiewptheme_customize_register($wp_customize) {
       array(
         'label' => 'Image partie actus',
         'description' => 'Image d\'illustration de la partie actus de la page d\'accueil',
-        'section' => 'custom_image',
+        'section' => 'fp_images',
         'setting' => 'custom_container_image'
       )
-    )
-  );
-
-  $wp_customize->add_section(
-    'custom_texts',
-    array(
-      'title' => 'Textes et styles partie actus',
-      'description' => 'Réglages pour les textes de la page d\'accueil principale partie Actus.',
-      'panel' => 'front_page'
-    )
-  );
-
-  $wp_customize->add_setting(
-    'custom_texts_title',
-    array(
-      'default' => 'Un super groupe de musique',
-      'type' => 'theme_mod'
-    )
-  );
-
-  $wp_customize->add_control(
-    'custom_texts_title',
-    array(
-      'label' => 'Titre secondaire',
-      'description' => 'Texte du titre secondaire',
-      'section' => 'custom_texts',
-      'setting' => 'custom_texts_title',
-      'type' => 'text'
-    )
-  );
-
-  $wp_customize->add_setting(
-    'custom_texts_title_size',
-    array(
-      'default' => 50,
-      'type' => 'theme_mod'
-    )
-  );
-
-  $wp_customize->add_control(
-    'custom_texts_title_size',
-    array(
-      'label' => 'Taille du titre secondaire',
-      'description' => 'Taille du texte du titre secondaire',
-      'section' => 'custom_texts',
-      'setting' => 'custom_texts_title_size',
-      'type' => 'number'
-    )
-  );
-
-  $wp_customize->add_setting(
-    'custom_texts_description',
-    array(
-      'default' => 'Texte actualité personnalisé.',
-      'type' => 'theme_mod'
-    )
-  );
-
-  $wp_customize->add_control(
-    'custom_texts_description',
-    array(
-      'label' => 'Texte',
-      'description' => 'Texte actus',
-      'section' => 'custom_texts',
-      'setting' => 'custom_texts_description',
-      'type' => 'textarea'
-    )
-  );
-
-  $wp_customize->add_section(
-    'custom_button',
-    array(
-      'title' => 'Bouton actus',
-      'description' => 'Réglages pour le bouton 2 partie actus de la page d\'accueil principale',
-      'panel' => 'front_page'
-    )
-  );
-
-  $wp_customize->add_setting(
-    'custom_button_text',
-    array(
-      'default' => 'En savoir plus',
-      'type' => 'theme_mod'
-    )
-  );
-
-  $wp_customize->add_control(
-    'custom_button_text',
-    array(
-      'label' => 'Bouton actus',
-      'description' => 'Texte du bouton actualité',
-      'section' => 'custom_button',
-      'setting' => 'custom_button_text',
-      'type' => 'text'
-    )
-  );
-
-  $wp_customize->add_setting(
-    'custom_button_url',
-    array(
-      'default' => '',
-      'type' => 'theme_mod'
-    )
-  );
-
-  $wp_customize->add_control(
-    'custom_button_url',
-    array(
-      'label' => 'Lien bouton actus',
-      'description' => 'Lien vers page du site du bouton actus',
-      'section' => 'custom_button',
-      'setting' => 'custom_button_url',
-      'type' => 'dropdown-pages'
-    )
-  );
-
-  $wp_customize->add_setting(
-    'custom_button_style',
-    array(
-      'default' => 'btn-style-1',
-      'type' =>'theme_mod'
-    )
-  );
-
-  $wp_customize->add_control(
-    'custom_button_style',
-    array(
-      'label' => 'Style',
-      'description' => 'Style du bouton actus',
-      'section' => 'custom_button',
-      'type' => 'radio',
-      'choices' => array(
-        'btn-style-1' => 'Style 1',
-        'btn-style-2' => 'Style 2',
-        'btn-style-3' => 'Style 3'
-      )
-    )
-  );
-
-// Partie 3 colonnes pictos >> 1ère colonne (gauche)
-
-  $wp_customize->add_section(
-    'custom_picto_1',
-    array(
-      'title' => 'Picto colonne 1',
-      'description' => 'Réglages du picto 1 de la page d\'accueil principale',
-      'panel' => 'front_page'
     )
   );
 
@@ -420,21 +87,164 @@ function sophiewptheme_customize_register($wp_customize) {
       array(
         'label' => 'Picto colonne 1',
         'description' => 'Picto colonne 1 de la page d\'accueil',
-        'section' => 'custom_picto_1',
+        'section' => 'fp_images',
         'setting' => 'custom_container_picto_1'
       )
     )
   );
 
-  $wp_customize->add_section(
-    'custom_texts_col_1',
+  $wp_customize->add_setting(
+    'custom_container_picto_2',
     array(
-      'title' => 'Texte et style colonne 1',
-      'description' => 'Réglages pour le texte colonne 1 de la page d\'accueil principale',
+      'default' => '<i class="fas fa-music fa-3x"></i>',
+      'type' => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    new WP_Customize_Image_control(
+      $wp_customize,
+      'custom_container_picto_2',
+      array(
+        'label' => 'Picto colonne 2',
+        'description' => 'Picto colonne 2 de la page d\'accueil',
+        'section' => 'fp_images',
+        'setting' => 'custom_container_picto_2'
+      )
+    )
+  );
+
+  $wp_customize->add_setting(
+    'custom_container_picto_3',
+    array(
+      'default' => '<i class="fas fa-ticket-alt fa-3x"></i>',
+      'type' => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    new WP_Customize_Image_control(
+      $wp_customize,
+      'custom_container_picto_3',
+      array(
+        'label' => 'Picto colonne 3',
+        'description' => 'Picto colonne 3 de la page d\'accueil',
+        'section' => 'fp_images',
+        'setting' => 'custom_container_picto_3'
+      )
+    )
+  );
+
+// Section Textes et styles de la page d'accueil principale :
+
+// Partie bannière
+  $wp_customize->add_section(
+    'fp_texts',
+    array(
+      'title' => 'Textes et styles',
+      'description' => 'Réglages pour les textes et styles des textes de la page d\'accueil principale.',
       'panel' => 'front_page'
     )
   );
 
+// texte bannière :
+  $wp_customize->add_setting(
+    'fp_texts_title',
+    array(
+      'default' => 'Bientôt en concert',
+      'type' => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'fp_texts_title',
+    array(
+      'label' => 'Titre principal de la bannière',
+      'description' => 'Texte du titre principal',
+      'section' => 'fp_texts',
+      'setting' => 'fp_texts_title',
+      'type' => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'fp_texts_title_size',
+    array(
+      'default' => 90,
+      'type' => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'fp_texts_title_size',
+    array(
+      'label' => 'Taille du titre de la bannière',
+      'description' => 'Taille du texte du titre principal',
+      'section' => 'fp_texts',
+      'setting' => 'fp_texts_title_size',
+      'type' => 'number'
+    )
+  );
+
+// partie actus
+  $wp_customize->add_setting(
+    'custom_texts_title',
+    array(
+      'default' => 'Un super groupe de musique',
+      'type' => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'custom_texts_title',
+    array(
+      'label' => 'Titre partie actus',
+      'description' => 'Texte du titre de la partie actus',
+      'section' => 'fp_texts',
+      'setting' => 'custom_texts_title',
+      'type' => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'custom_texts_title_size',
+    array(
+      'default' => 50,
+      'type' => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'custom_texts_title_size',
+    array(
+      'label' => 'Taille du titre partie actus',
+      'description' => 'Taille du texte du titre de la partie actus',
+      'section' => 'fp_texts',
+      'setting' => 'custom_texts_title_size',
+      'type' => 'number'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'custom_texts_description',
+    array(
+      'default' => 'Texte actualité personnalisé.',
+      'type' => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'custom_texts_description',
+    array(
+      'label' => 'Contenu du bloc texte actus',
+      'description' => 'Texte actus',
+      'section' => 'fp_texts',
+      'setting' => 'custom_texts_description',
+      'type' => 'textarea'
+    )
+  );
+
+// partie colonnes / 1
   $wp_customize->add_setting(
     'custom_texts_title_col_1',
     array(
@@ -448,7 +258,7 @@ function sophiewptheme_customize_register($wp_customize) {
     array(
       'label' => 'Titre colonne 1',
       'description' => 'Texte du titre colonne 1',
-      'section' => 'custom_texts_col_1',
+      'section' => 'fp_texts',
       'setting' => 'custom_texts_title_col_1',
       'type' => 'text'
     )
@@ -467,7 +277,7 @@ function sophiewptheme_customize_register($wp_customize) {
     array(
       'label' => 'Taille du titre colonne 1',
       'description' => 'Taille du texte du titre colonne 1',
-      'section' => 'custom_texts_col_1',
+      'section' => 'fp_texts',
       'setting' => 'custom_texts_title_size_col_1',
       'type' => 'number'
     )
@@ -476,7 +286,7 @@ function sophiewptheme_customize_register($wp_customize) {
   $wp_customize->add_setting(
     'custom_texts_description_col_1',
     array(
-      'default' => 'Texte colonne 1',
+      'default' => 'Contenu texte colonne 1',
       'type' => 'theme_mod'
     )
   );
@@ -484,55 +294,15 @@ function sophiewptheme_customize_register($wp_customize) {
   $wp_customize->add_control(
     'custom_texts_description_col_1',
     array(
-      'label' => 'Texte',
-      'description' => 'Texte colonne',
-      'section' => 'custom_texts_col_1',
+      'label' => 'Contenu texte colonne 1',
+      'description' => 'Texte colonne 1',
+      'section' => 'fp_texts',
       'setting' => 'custom_texts_description_col_1',
       'type' => 'textarea'
     )
   );
 
-  // Partie 3 colonnes pictos >> 2eme colonne (centre)
-
-    $wp_customize->add_section(
-      'custom_picto_2',
-      array(
-        'title' => 'Picto colonne 2',
-        'description' => 'Réglages du picto 2 de la page d\'accueil principale',
-        'panel' => 'front_page'
-      )
-    );
-
-    $wp_customize->add_setting(
-      'custom_container_picto_2',
-      array(
-        'default' => '<i class="fas fa-music fa-3x"></i>',
-        'type' => 'theme_mod'
-      )
-    );
-
-    $wp_customize->add_control(
-      new WP_Customize_Image_control(
-        $wp_customize,
-        'custom_container_picto_2',
-        array(
-          'label' => 'Picto colonne 2',
-          'description' => 'Picto colonne 2 de la page d\'accueil',
-          'section' => 'custom_picto_2',
-          'setting' => 'custom_container_picto_2'
-        )
-      )
-    );
-
-    $wp_customize->add_section(
-      'custom_texts_col_2',
-      array(
-        'title' => 'Texte et style colonne 2',
-        'description' => 'Réglages pour le texte colonne 2 de la page d\'accueil principale',
-        'panel' => 'front_page'
-      )
-    );
-
+  // partie colonnes / 2
     $wp_customize->add_setting(
       'custom_texts_title_col_2',
       array(
@@ -546,7 +316,7 @@ function sophiewptheme_customize_register($wp_customize) {
       array(
         'label' => 'Titre colonne 2',
         'description' => 'Texte du titre colonne 2',
-        'section' => 'custom_texts_col_2',
+        'section' => 'fp_texts',
         'setting' => 'custom_texts_title_col_2',
         'type' => 'text'
       )
@@ -565,7 +335,7 @@ function sophiewptheme_customize_register($wp_customize) {
       array(
         'label' => 'Taille du titre colonne 2',
         'description' => 'Taille du texte du titre colonne 2',
-        'section' => 'custom_texts_col_2',
+        'section' => 'fp_texts',
         'setting' => 'custom_texts_title_size_col_2',
         'type' => 'number'
       )
@@ -582,55 +352,15 @@ function sophiewptheme_customize_register($wp_customize) {
     $wp_customize->add_control(
       'custom_texts_description_col_2',
       array(
-        'label' => 'Texte',
-        'description' => 'Texte colonne',
-        'section' => 'custom_texts_col_2',
+        'label' => 'Contenu texte colonne 2',
+        'description' => 'Texte colonne 2',
+        'section' => 'fp_texts',
         'setting' => 'custom_texts_description_col_2',
         'type' => 'textarea'
       )
     );
 
-    // Partie 3 colonnes pictos >> 3eme colonne (droite)
-
-      $wp_customize->add_section(
-        'custom_picto_3',
-        array(
-          'title' => 'Picto colonne 3',
-          'description' => 'Réglages du picto 3 de la page d\'accueil principale',
-          'panel' => 'front_page'
-        )
-      );
-
-      $wp_customize->add_setting(
-        'custom_container_picto_3',
-        array(
-          'default' => '<i class="fas fa-ticket-alt fa-3x"></i>',
-          'type' => 'theme_mod'
-        )
-      );
-
-      $wp_customize->add_control(
-        new WP_Customize_Image_control(
-          $wp_customize,
-          'custom_container_picto_3',
-          array(
-            'label' => 'Picto colonne 3',
-            'description' => 'Picto colonne 3 de la page d\'accueil',
-            'section' => 'custom_picto_3',
-            'setting' => 'custom_container_picto_3'
-          )
-        )
-      );
-
-      $wp_customize->add_section(
-        'custom_texts_col_3',
-        array(
-          'title' => 'Texte et style colonne 3',
-          'description' => 'Réglages pour le texte colonne 3 de la page d\'accueil principale',
-          'panel' => 'front_page'
-        )
-      );
-
+// partie colonnes / 3
       $wp_customize->add_setting(
         'custom_texts_title_col_3',
         array(
@@ -644,7 +374,7 @@ function sophiewptheme_customize_register($wp_customize) {
         array(
           'label' => 'Titre colonne 3',
           'description' => 'Texte du titre colonne 3',
-          'section' => 'custom_texts_col_3',
+          'section' => 'fp_texts',
           'setting' => 'custom_texts_title_col_3',
           'type' => 'text'
         )
@@ -663,7 +393,7 @@ function sophiewptheme_customize_register($wp_customize) {
         array(
           'label' => 'Taille du titre colonne 3',
           'description' => 'Taille du texte du titre colonne 3',
-          'section' => 'custom_texts_col_3',
+          'section' => 'fp_texts',
           'setting' => 'custom_texts_title_size_col_3',
           'type' => 'number'
         )
@@ -680,19 +410,154 @@ function sophiewptheme_customize_register($wp_customize) {
       $wp_customize->add_control(
         'custom_texts_description_col_3',
         array(
-          'label' => 'Texte',
-          'description' => 'Texte colonne',
-          'section' => 'custom_texts_col_3',
+          'label' => 'Contenu texte colonne 3',
+          'description' => 'Texte colonne 3',
+          'section' => 'fp_texts',
           'setting' => 'custom_texts_description_col_3',
           'type' => 'textarea'
         )
       );
 
-      // section citation
+// Boutons de la page d'accueil
+
+// bouton 1 (bannière)
+  $wp_customize->add_section(
+    'fp_buttons',
+    array(
+      'title' => 'Bouton',
+      'description' => 'Réglages pour le bouton de la page d\'accueil principale',
+      'panel' => 'front_page'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'fp_button_text',
+    array(
+      'default' => 'Réserver mon billet',
+      'type' => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'fp_button_text',
+    array(
+      'label' => 'Bouton bannière',
+      'description' => 'Texte du bouton bannière',
+      'section' => 'fp_buttons',
+      'setting' => 'fp_button_text',
+      'type' => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'fp_button_url',
+    array(
+      'default' => '',
+      'type' => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'fp_button_url',
+    array(
+      'label' => 'Lien bouton bannière',
+      'description' => 'Adresse URL du bouton bannière',
+      'section' => 'fp_buttons',
+      'setting' => 'fp_button_url',
+      'type' => 'url'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'fp_button_style',
+    array(
+      'default' => 'btn-style-1',
+      'type' =>'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'fp_button_style',
+    array(
+      'label' => 'Style du bouton bannière',
+      'description' => 'Style du bouton bannière',
+      'section' => 'fp_buttons',
+      'type' => 'radio',
+      'choices' => array(
+        'btn-style-1' => 'Style 1',
+        'btn-style-2' => 'Style 2',
+        'btn-style-3' => 'Style 3'
+      )
+    )
+  );
+
+//bouton 2 partie actus
+  $wp_customize->add_setting(
+    'custom_button_text',
+    array(
+      'default' => 'En savoir plus',
+      'type' => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'custom_button_text',
+    array(
+      'label' => 'Bouton actus',
+      'description' => 'Texte du bouton actualité',
+      'section' => 'fp_buttons',
+      'setting' => 'custom_button_text',
+      'type' => 'text'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'custom_button_url',
+    array(
+      'default' => '',
+      'type' => 'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'custom_button_url',
+    array(
+      'label' => 'Lien bouton actus',
+      'description' => 'Lien vers page du site du bouton actus',
+      'section' => 'fp_buttons',
+      'setting' => 'custom_button_url',
+      'type' => 'dropdown-pages'
+    )
+  );
+
+  $wp_customize->add_setting(
+    'custom_button_style',
+    array(
+      'default' => 'btn-style-1',
+      'type' =>'theme_mod'
+    )
+  );
+
+  $wp_customize->add_control(
+    'custom_button_style',
+    array(
+      'label' => 'Style du bouton actus',
+      'description' => 'Style du bouton actus',
+      'section' => 'fp_buttons',
+      'type' => 'radio',
+      'choices' => array(
+        'btn-style-1' => 'Style 1',
+        'btn-style-2' => 'Style 2',
+        'btn-style-3' => 'Style 3'
+      )
+    )
+  );
+
+// Section citation
       $wp_customize->add_section(
         'custom_quote',
         array(
-          'title' => 'Citation',
+          'title' => 'Bloc Citation',
           'description' => 'Réglages pour la citation de la page d\'accueil principale',
           'panel' => 'front_page'
         )
@@ -781,6 +646,71 @@ function sophiewptheme_customize_register($wp_customize) {
         )
       );
 
+// Section Options du thème
+      $wp_customize->add_panel(
+        'theme_options',
+        array(
+          'title' => 'Options du thème',
+          // 'description' => 'Personnalisation du thème'
+        )
+      );
+
+      $wp_customize->add_section(
+        'boxy_effect',
+        array(
+          'title' => 'Image effet boxy',
+          'description' => 'Donne un effet boîte sur l\'image de bannière',
+          'panel' => 'theme_options'
+        )
+      );
+
+      $wp_customize->add_setting(
+        'banner_boxy',
+        array(
+          'default' => false,
+          'type' => 'theme_mod'
+        )
+      );
+
+      $wp_customize->add_control(
+        'banner_boxy',
+        array(
+          'label' => 'Affichage avec effet boxy',
+          'description' => 'Style de la bannière',
+          'section' => 'boxy_effect',
+          'setting' => 'banner_boxy',
+          'type' => 'checkbox'
+        )
+      );
+
+      $wp_customize->add_section(
+        'hide_widget_sidebar',
+        array(
+          'title' => 'Zone de widgets latérale',
+          'description' => '',
+          'panel' => 'theme_options'
+        )
+      );
+
+      $wp_customize->add_setting(
+        'widgets-sidebar',
+        array(
+          'default'     => false,
+          'type'        => 'theme_mod'
+        )
+      );
+
+      $wp_customize->add_control(
+        'widgets-sidebar',
+        array(
+          'label'       => 'Masquer la zone de widgets latérale',
+          'description' => '',
+          'section'     => 'hide_widget_sidebar',
+          'setting'     => 'widgets-sidebar',
+          'type'        => 'checkbox'
+        )
+      );
+
 // Section Footer
       $wp_customize->add_section(
       'footer',
@@ -809,6 +739,26 @@ function sophiewptheme_customize_register($wp_customize) {
         )
       );
 
+      $wp_customize->add_setting(
+        'footer_bg_color',
+        array(
+          'default' => '#222',
+          'type' => 'theme_mod'
+        )
+      );
+
+      $wp_customize->add_control(
+        new WP_Customize_Color_control(
+          $wp_customize,
+          'footer_bg_color',
+          array(
+            'label' => 'Couleur de fond du footer',
+            'description' => 'Couleur de fond du footer',
+            'section' => 'footer',
+            'setting' => 'footer_bg_color'
+          )
+        )
+      );
 
       // Zone de widget latérale (affichage checkbox)
       // $wp_customize->add_section(
