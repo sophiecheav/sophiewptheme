@@ -23,7 +23,7 @@
       <div class="custom-presentation-infos">
         <h2 class="custom-title" style="font-size: <?php echo get_theme_mod('custom_texts_title_size'); ?>px;"><?php echo get_theme_mod('custom_texts_title'); ?></h2>
         <p class="custom-content"><?php echo get_theme_mod('custom_texts_description'); ?></p>
-        <a href="<?php echo get_page_uri('custom_button_url'); ?>">
+        <a href="<?php bloginfo('custom_button_url'); ?>">
           <button type="button" class="call-to-action <?php echo get_theme_mod('custom_button_style'); ?>"><?php echo get_theme_mod('custom_button_text') ?></button>
         </a>
       </div>
