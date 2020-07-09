@@ -23,5 +23,15 @@
         'label_submit'  => 'Publier'
       )
     );
+    // comment_form('comment_form_default_fields');
+      // array(
+      //   'title_reply'   => 'Laisser un commentaire',
+      //   'label_submit'  => 'Publier'
+      //   'fields' => array(
+      //     'author' => '<label for="author">Nom</label><input id="author" type="text"/>',
+      //     'email' => '<label for="email>E-mail</label><input id="email" type="email"/>'
+      //   )
+      // )
+    // );
   ?>
 </section>

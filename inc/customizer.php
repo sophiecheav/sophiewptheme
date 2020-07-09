@@ -2,6 +2,7 @@
 
 function sophiewptheme_customize_register($wp_customize) {
 
+// Bannière - image de fond
   $wp_customize->add_section(
   'banner',
     array(
@@ -29,6 +30,8 @@ function sophiewptheme_customize_register($wp_customize) {
       )
     )
   );
+
+// Panel 'Page d'acceuil principale'
 
   $wp_customize->add_panel(
     'front_page',
@@ -778,6 +781,47 @@ function sophiewptheme_customize_register($wp_customize) {
         )
       );
 
+// Section Footer
+      $wp_customize->add_section(
+      'footer',
+        array(
+          'title' => 'Footer',
+          'description'   => 'Personnalisation du bas de page'
+        )
+      );
+
+      $wp_customize->add_setting(
+        'copyright_text',
+        array(
+          'default' => 'Tous droits réservés',
+          'type' => 'theme_mod'
+        )
+      );
+
+      $wp_customize->add_control(
+        'copyright_text',
+        array(
+          'label' => 'Texte copyright',
+          'description' => 'Texte du champ copyright',
+          'section' => 'footer',
+          'setting' => 'copyright_text',
+          'type' => 'text'
+        )
+      );
+
+
+      // Zone de widget latérale (affichage checkbox)
+      // $wp_customize->add_section(
+      //   'widgets-sidebar',
+      //   array(
+      //     'title' => 'Zone de widgets latérale',
+      //     'description' => 'Cocher pour masquer la zone de widgets latérale'
+      //   )
+      // );
+      //
+      // $wp_customize->add_setting(
+      //
+      //   )
 }
 
 add_action('customize_register', 'sophiewptheme_customize_register');

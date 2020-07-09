@@ -964,6 +964,7 @@ body {
 
 .custom-blocks {
 	display: flex;
+	justify-content: space-around;
 }
 
 .custom-presentation {
@@ -1477,4 +1478,10 @@ img {
   .container {
     width: 1170px;
   }
+}
+
+/* PERSO */
+.flex {
+	display: flex;
+	margin-right: 30px;
 }

@@ -37,7 +37,7 @@
   <section class="footer-infos container">
 
     <div class="copyright">
-      <p>© <?php the_time('Y'); ?> <?php bloginfo('name'); ?>. Tous droits réservés.</p>
+      <p>© <?php the_time('Y'); ?> <?php bloginfo('name'); ?>. <?php echo get_theme_mod('copyright_text'); ?></p>
     </div>
 
 <!-- pas div class="navigation-secondary" ? Mélange ici social et secondary... Combien de zones menus ? -->

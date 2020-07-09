@@ -5,9 +5,7 @@ function sophiewptheme_setup() {
   register_nav_menus(
     array(
       'primary' => 'Menu principal',
-      'secondary' => 'Menu secondaire',
-      'footer' => 'Menu de pied de page',
-      'social' => 'Menu des réseaux sociaux'
+      'secondary' => 'Menu secondaire'
     )
   );
 
@@ -27,7 +25,7 @@ function sophiewptheme_init_widgets() {
       'description' => '<p>Description de la zone de widgets</p>',
       'before_widget' => '<div class="widget-section">',
       'after_widget'  => '</div>',
-      'before_title'  => '<h4 class="widget-title">Zone de widgets 1',
+      'before_title'  => '<h4 class="widget-title">',
       'after_title' => '</h4>'
     )
   );
@@ -39,7 +37,7 @@ function sophiewptheme_init_widgets() {
       'description' => '<p>Description de la zone de widgets</p>',
       'before_widget' => '<div class="widget-section">',
       'after_widget'  => '</div>',
-      'before_title'  => '<h4 class="widget-title">Zone de widgets 2',
+      'before_title'  => '<h4 class="widget-title">',
       'after_title' => '</h4>'
     )
   );
@@ -51,7 +49,7 @@ function sophiewptheme_init_widgets() {
       'description' => '<p>Description de la zone de widgets</p>',
       'before_widget' => '<div class="widget-section">',
       'after_widget'  => '</div>',
-      'before_title'  => '<h4 class="widget-title">Zone de widgets 3',
+      'before_title'  => '<h4 class="widget-title">',
       'after_title' => '</h4>'
     )
   );
@@ -63,7 +61,7 @@ function sophiewptheme_init_widgets() {
       'description' => '<p>Description de la zone de widgets</p>',
       'before_widget' => '<div class="widget-section">',
       'after_widget'  => '</div>',
-      'before_title'  => '<h4 class="widget-title">Zone de widgets 4',
+      'before_title'  => '<h4 class="widget-title">',
       'after_title' => '</h4>'
     )
   );
@@ -71,11 +69,11 @@ function sophiewptheme_init_widgets() {
   register_sidebar(
     array(
       'id'  => 'widgets-sidebar',
-      'name'  => 'Zone de widgets de la barre latérale',
+      'name'  => 'Zone de widgets latérale',
       'description' => 'Description de la zone de widgets',
       'before_widget' => '<div class="widget">',
       'after_widget'  => '</div>',
-      'before_title'  => '<h3 class="widget-title">Zone de widgets latérale',
+      'before_title'  => '<h3 class="widget-title">',
       'after_title' => '</h3>'
     )
   );
