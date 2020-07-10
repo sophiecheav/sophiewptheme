@@ -83,6 +83,7 @@ add_action('widgets_init', 'sophiewptheme_init_widgets');
 
 require get_template_directory() . '/inc/customizer.php';
 
+// récupère le fichier script JS
 function find_js() {
   wp_enqueue_script( 'main',
   get_template_directory_uri() . '/assets/js/main.js',
@@ -90,5 +91,12 @@ function find_js() {
 }
 
 add_action( 'wp_enqueue_scripts', 'find_js' );
+
+// récupère le fichier style CSS
+function find_css() {
+  wp_enqueue_style('style', get_stylesheet_uri());
+}
+
+add_action('wp_enqueue_styles', 'find_css');
 
 ?>
