@@ -13,7 +13,7 @@
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/4e5f136f21.js" crossorigin="anonymous"></script>
-  <script src="./assets/js/main.js" type="text/javascript"></script>
+  <!-- <script src="./assets/js/main.js" type="text/javascript"></script> -->
 
   <?php wp_head(); ?>
 
@@ -70,12 +70,14 @@
           <a href="#"><i class="fas fa-search"></i>
           </a>
         </li>
+        <?php if(!is_woocommerce()) : ?>
         <li>
-          <a href="#">
+          <a href="<?php echo wc_get_cart_url() ?>">
             <i class="fas fa-shopping-cart"></i>
-            <span class="count cart-counter">0</span>
+            <span class="count cart-counter"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
           </a>
         </li>
+      <?php endif; ?>
       </ul>
     </nav>
     <section class="search-popup">

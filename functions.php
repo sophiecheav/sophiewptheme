@@ -83,4 +83,12 @@ add_action('widgets_init', 'sophiewptheme_init_widgets');
 
 require get_template_directory() . '/inc/customizer.php';
 
+function find_js() {
+  wp_enqueue_script( 'main',
+  get_template_directory_uri() . '/assets/js/main.js',
+  array() );
+}
+
+add_action( 'wp_enqueue_scripts', 'find_js' );
+
 ?>
